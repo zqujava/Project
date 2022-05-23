@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #app{
+            background-image: url("../img/background.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .login-wrap {
+            box-sizing: border-box;
+            padding-top: 10%;
+            padding-bottom: 10%;
+
+            /*background-repeat: repeat-y;*/
+            background-position: center right;
+
+        }
+
+        .login-container {
+            border-radius: 10px;
+            margin: 0px auto;
+            width: 350px;
+            padding: 30px 35px 15px 35px;
+            background: #fff;
+            border: solid #eaeaea;
+            text-align: left;
+            box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <template>
+        <div class="login-wrap">
+            <el-form class="login-container">
+                <h1 class="title">用户登录</h1>
+                <el-form-item label="账号">
+                    <el-input type="username" v-model="form.username" placeholder="登录账号" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="登录密码">
+                    <el-input type="password" v-model="form.password" placeholder="登录密码" show-password
+                              autocomplete="off"></el-input>
+                </el-form-item>
+
+                <el-form-item>
+                    <el-button type="primary" style="width: 100%;" @click="login()">登录</el-button>
+                </el-form-item>
+            </el-form>
+        </div>
+    </template>
+</div>
+<script src="../js/vue.js"></script>
+<script src="../element-ui/lib/index.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+
+<script type="text/javascript" src="../js/axios-0.18.0.js"></script>
+<link rel="stylesheet" href="../element-ui/lib/theme-chalk/index.css">
+<script>
+    var Vue = new Vue({
+        el: "#app",
+        data: {
+            // pagination: {},
+            // dataList: [],//当前页要展示的列表数据
+            // formData: {},//表单数据
+            form: {},//登录数据
+        },
+        /*data() {
+            return {
+                    uname: "admin",
+                    password: "123",
+            };
+        },*/
+
+        methods: {
+            login() {
+                axios.post("/users", this.form).then((res) => {
+                    //this.data=res.data;
+                    console.log(res.data);
+                    if (res.data) {
+                        this.$message.success("登录成功！");
+                        window.location.href = '/pages/brand1.html'
+                    }else if(res.data==false){
+                        this.$message.success("用户名或密码错误！");
+                    }
+                });
+            }
+        },
+
+    });
+
+</script>
+</body>
+</html>
