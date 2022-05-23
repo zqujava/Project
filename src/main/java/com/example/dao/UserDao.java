@@ -2,10 +2,11 @@ package com.example.dao;
 
 
 import com.example.domain.User;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 public interface UserDao {
-
 
     /**
      * 登录
@@ -28,6 +29,10 @@ public interface UserDao {
      * @param user
      * @return
      */
-    @Select("insert into login (username, password) values(#{username},#{password})")
-    public String registerUserName(User user);
+    @Insert("insert into login (username, password) values(#{username},#{password})")
+    public Integer registerUserName(User user);
+
+
+    @Update("update login set password = #{password} where username = #{username}")
+    public Integer changePwd(User user);
 }

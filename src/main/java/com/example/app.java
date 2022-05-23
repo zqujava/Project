@@ -11,7 +11,7 @@ public class app {
         BookService bookService = ctx.getBean(BookService.class);
         User user = new User();
         user.setUsername("admin");
-        user.setPassword(123);
+        user.setPassword("123");
         boolean userByName = bookService.findUserByName(user);
         System.out.println(userByName);
         System.out.println(user);

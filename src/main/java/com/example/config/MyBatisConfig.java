@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 
 import javax.sql.DataSource;
 
+//mybatis扫描
 public class MyBatisConfig {
 
     @Bean

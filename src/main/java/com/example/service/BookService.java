@@ -11,12 +11,9 @@ public interface BookService {
      */
     public boolean findUserByName(User user);
 
-    /**
-     * 注册
-     * @param user
-     * @return
-     */
-    public boolean registerUserName(User user);
+
+
+    public boolean changePwd(User user);
 
     /**
      * 通过username查找是否存在该username
@@ -24,4 +21,6 @@ public interface BookService {
      * @return
      */
     public boolean findName(User user);
+
+
 }

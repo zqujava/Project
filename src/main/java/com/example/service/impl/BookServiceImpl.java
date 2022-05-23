@@ -21,23 +21,28 @@ public class BookServiceImpl implements BookService {
             return false;
         }
     }
-    public boolean registerUserName(User user){
-        User userByName = userDao.findUserByName(user);
-        System.out.println(userByName);
-        if (userByName!=null){
+    public boolean changePwd(User user) {
+        //查看是否查得到该用户名
+        User name = userDao.findName(user.getUsername());
+        System.out.println(name);
+        if (name!=null){
+            //查到则可以修改
+            Integer i = userDao.changePwd(user);
+            System.out.println(i);
             return true;
         }else {
-            userDao.registerUserName(user);
             return false;
         }
     }
 
     public boolean findName(User user) {
-        User userByName = userDao.findName(user.getUsername());
-        System.out.println(userByName);
-        if (userByName!=null){
+        //查看是否查得到该用户名
+        User name = userDao.findName(user.getUsername());
+        System.out.println(name);
+        if (name!=null){
             return true;
         }else {
+            //没有查到则可以注册
             userDao.registerUserName(user);
             return false;
         }
