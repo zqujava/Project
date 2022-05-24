@@ -1,8 +1,6 @@
 package com.example.service;
 
-import com.example.domain.Department;
-import com.example.domain.Employment;
-import com.example.domain.rewardPunish;
+import com.example.domain.*;
 
 import java.util.List;
 
@@ -26,6 +24,17 @@ public interface WorkService {
      * 查询所有的奖惩
      * @return
      */
-    public List<rewardPunish> selectReward();
+    public List<RewardPunish> selectAllReward();
 
+    /**
+     * 查询所有的奖惩
+     * @return
+     */
+    public List<Salary> selectSalary();
+
+    /**
+     * 所有员工信息
+     * @return
+     */
+    public List<Staff> selectStaff();
 }

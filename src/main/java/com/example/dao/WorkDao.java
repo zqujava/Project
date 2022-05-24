@@ -1,8 +1,6 @@
 package com.example.dao;
 
-import com.example.domain.Department;
-import com.example.domain.Employment;
-import com.example.domain.rewardPunish;
+import com.example.domain.*;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -28,5 +26,19 @@ public interface WorkDao {
      * @return
      */
     @Select("select * from rewardpunish")
-    public List<rewardPunish> selectReward();
+    public List<RewardPunish> selectReward();
+
+    /**
+     * 查询所有员工薪资
+     * @return
+     */
+    @Select("select * from salary")
+    public List<Salary> selectSalary();
+
+    /**
+     * 查询所有员工薪资
+     * @return
+     */
+    @Select("select * from staff")
+    public List<Staff> selectStaff();
 }

@@ -1,8 +1,6 @@
 package com.example.controller;
 
-import com.example.domain.Department;
-import com.example.domain.Employment;
-import com.example.domain.rewardPunish;
+import com.example.domain.*;
 import com.example.service.WorkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -33,9 +31,23 @@ public class WorkController {
     }
     @RequestMapping(value = "/selectAllReward", method = RequestMethod.GET)
     @GetMapping
-    public List<rewardPunish> selectReward(){
-        List<rewardPunish> rewardPunishes = workService.selectReward();
+    public List<RewardPunish> selectReward(){
+        List<RewardPunish> rewardPunishes = workService.selectAllReward();
         System.out.println(rewardPunishes);
         return rewardPunishes;
+    }
+    @RequestMapping(value = "/selectAllSalary", method = RequestMethod.GET)
+    @GetMapping
+    public List<Salary> selectSalary(){
+        List<Salary> salaries = workService.selectSalary();
+        System.out.println(salaries);
+        return salaries;
+    }
+    @RequestMapping(value = "/selectAllStaff", method = RequestMethod.GET)
+    @GetMapping
+    public List<Staff> selectStaff(){
+        List<Staff> staff = workService.selectStaff();
+        System.out.println(staff);
+        return staff;
     }
 }

@@ -1,6 +1,6 @@
 package com.example.domain;
 
-public class rewardPunish {
+public class RewardPunish {
     private Integer id;
     private String name;
     private Integer category;
