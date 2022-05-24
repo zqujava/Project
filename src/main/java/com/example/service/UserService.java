@@ -3,7 +3,7 @@ package com.example.service;
 
 import com.example.domain.User;
 
-public interface BookService {
+public interface UserService {
     /**
      * 登录
      * @param user
@@ -11,8 +11,11 @@ public interface BookService {
      */
     public boolean findUserByName(User user);
 
-
-
+    /**
+     * 修改密码
+     * @param user
+     * @return
+     */
     public boolean changePwd(User user);
 
     /**

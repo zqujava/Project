@@ -2,7 +2,7 @@ package com.example.controller;
 
 
 import com.example.domain.User;
-import com.example.service.BookService;
+import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private BookService bookService;
+    private UserService userService;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public boolean login(@RequestBody User user){
 
         System.out.println("login---success!");
-        boolean userByName = bookService.findUserByName(user);
+        boolean userByName = userService.findUserByName(user);
         System.out.println(userByName);
         return userByName;
     }
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public boolean register(@RequestBody User user) {
-        boolean findname = bookService.findName(user);
+        boolean findname = userService.findName(user);
         if (findname) {
             System.out.println("已存在!");
         } else {
@@ -35,7 +35,7 @@ public class UserController {
 
     @RequestMapping(value = "/changePwd", method = RequestMethod.PUT)
     public boolean changePwd(@RequestBody User user) {
-        boolean findname = bookService.changePwd(user);
+        boolean findname = userService.changePwd(user);
         if (findname) {
             System.out.println("修改成功！");
         } else {
