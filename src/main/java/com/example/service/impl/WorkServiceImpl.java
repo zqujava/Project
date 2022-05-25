@@ -30,11 +30,19 @@ public class WorkServiceImpl implements WorkService {
     }
 
     public List<Salary> selectSalary() {
-        System.out.println(workDao.selectSalary());
+        //System.out.println(workDao.selectSalary());
         return workDao.selectSalary();
     }
 
     public List<Staff> selectStaff() {
         return workDao.selectStaff();
+    }
+
+    public List<Training> selectTrain() {
+        return workDao.selectTrain();
+    }
+
+    public List<CheckJob> selectCheckJob() {
+        return workDao.selectCheckJob();
     }
 }

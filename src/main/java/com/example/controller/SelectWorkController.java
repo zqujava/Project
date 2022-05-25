@@ -11,43 +11,55 @@ import java.util.List;
 @RestController
 @RequestMapping("/works")
 @ResponseBody
-public class WorkController {
+public class SelectWorkController {
     @Autowired
     private WorkService workService;
 
-    @RequestMapping(value = "/selectAllEmploy", method = RequestMethod.GET)
-    @GetMapping
-    public  List<Employment> getAll() {
+    @GetMapping("/selectEmploy")
+    public  List<Employment> getEmploy() {
         List<Employment> employments = workService.selectAllEmploy();
         System.out.println(employments);
         return employments;
     }
-    @RequestMapping(value = "/selectAllDepart", method = RequestMethod.GET)
-    @GetMapping
+
+    @GetMapping("/selectDepart")
     public List<Department> selectAllDepart() {
         List<Department> departments = workService.selectAllDepart();
         System.out.println(departments);
         return departments;
     }
-    @RequestMapping(value = "/selectAllReward", method = RequestMethod.GET)
-    @GetMapping
+
+    @GetMapping("/selectReward")
     public List<RewardPunish> selectReward(){
         List<RewardPunish> rewardPunishes = workService.selectAllReward();
         System.out.println(rewardPunishes);
         return rewardPunishes;
     }
-    @RequestMapping(value = "/selectAllSalary", method = RequestMethod.GET)
-    @GetMapping
+
+    @GetMapping("/selectSalary")
     public List<Salary> selectSalary(){
         List<Salary> salaries = workService.selectSalary();
         System.out.println(salaries);
         return salaries;
     }
-    @RequestMapping(value = "/selectAllStaff", method = RequestMethod.GET)
-    @GetMapping
+
+    @GetMapping("/selectStaff")
     public List<Staff> selectStaff(){
         List<Staff> staff = workService.selectStaff();
         System.out.println(staff);
         return staff;
+    }
+
+    @GetMapping("/selectTrain")
+    public List<Training> selectTrain(){
+        List<Training> Training = workService.selectTrain();
+        System.out.println(Training);
+        return Training;
+    }
+    @GetMapping("/selectCheckJob")
+    public List<CheckJob> selectCheckJob(){
+        List<CheckJob> checkJobs = workService.selectCheckJob();
+        System.out.println(checkJobs);
+        return checkJobs;
     }
 }

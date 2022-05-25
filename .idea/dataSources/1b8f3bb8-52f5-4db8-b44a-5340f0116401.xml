@@ -994,7 +994,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="291" parent="13" name="check_job"/>
+    <table id="291" parent="13" name="checkjob"/>
     <table id="292" parent="13" name="department"/>
     <table id="293" parent="13" name="employment"/>
     <table id="294" parent="13" name="login"/>
@@ -1183,7 +1183,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="338" parent="298" name="amount">
       <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int|0s</DataType>
     </column>
     <key id="339" parent="298" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>

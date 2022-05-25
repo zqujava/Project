@@ -32,7 +32,11 @@ public interface UserDao {
     @Insert("insert into login (username, password) values(#{username},#{password})")
     public Integer registerUserName(User user);
 
-
+    /**
+     * 修改密码
+     * @param user
+     * @return
+     */
     @Update("update login set password = #{password} where username = #{username}")
     public Integer changePwd(User user);
 }

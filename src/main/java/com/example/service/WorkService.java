@@ -1,6 +1,7 @@
 package com.example.service;
 
 import com.example.domain.*;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -37,4 +38,17 @@ public interface WorkService {
      * @return
      */
     public List<Staff> selectStaff();
+
+    /**
+     * 查看培训信息
+     * @return
+     */
+    public List<Training> selectTrain();
+
+    /**
+     * 查看考勤信息
+     * @return
+     */
+    public List<CheckJob> selectCheckJob();
 }
+

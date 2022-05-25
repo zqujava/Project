@@ -36,9 +36,23 @@ public interface WorkDao {
     public List<Salary> selectSalary();
 
     /**
-     * 查询所有员工薪资
+     * 查询所有员工信息
      * @return
      */
     @Select("select * from staff")
     public List<Staff> selectStaff();
+
+    /**
+     * 查看培训信息
+     * @return
+     */
+    @Select("select * from training")
+    public List<Training> selectTrain();
+
+    /**
+     * 查看考勤信息
+     * @return
+     */
+    @Select("select * from checkjob")
+    public List<CheckJob> selectCheckJob();
 }
