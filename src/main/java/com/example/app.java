@@ -4,7 +4,10 @@ import com.example.config.SpringConfig;
 import com.example.domain.User;
 import com.example.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
+/**
+ * @author luo
+ * 登录测试
+ */
 public class app {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);

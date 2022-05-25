@@ -1,58 +1,56 @@
-package com.example.dao;
+package com.example.service;
 
 import com.example.domain.*;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-public interface WorkDao {
+/**
+ * @author luo
+ */
+public interface WorkSelectService {
 
     /**
-     * 查询全部岗位
+     * 查询所有的岗位
      * @return
      */
-    @Select("select * from employment")
     public List<Employment> selectAllEmploy();
 
+
     /**
-     * 查询所有部门
+     * 查询所有的部门
      * @return
      */
-    @Select("select * from department")
     public List<Department> selectAllDepart();
 
     /**
      * 查询所有的奖惩
      * @return
      */
-    @Select("select * from rewardpunish")
-    public List<RewardPunish> selectReward();
+    public List<RewardPunish> selectAllReward();
 
     /**
-     * 查询所有员工薪资
+     * 查询所有的奖惩
      * @return
      */
-    @Select("select * from salary")
     public List<Salary> selectSalary();
 
     /**
-     * 查询所有员工信息
+     * 所有员工信息
      * @return
      */
-    @Select("select * from staff")
     public List<Staff> selectStaff();
 
     /**
      * 查看培训信息
      * @return
      */
-    @Select("select * from training")
     public List<Training> selectTrain();
 
     /**
      * 查看考勤信息
      * @return
      */
-    @Select("select * from checkjob")
     public List<CheckJob> selectCheckJob();
 }
+

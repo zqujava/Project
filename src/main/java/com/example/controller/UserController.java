@@ -6,6 +6,10 @@ import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * @author luo
+ * 登录、注册、修改密码
+ */
 @RestController
 @RequestMapping("/users")
 @ResponseBody

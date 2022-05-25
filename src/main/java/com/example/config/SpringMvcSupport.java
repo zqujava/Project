@@ -3,7 +3,10 @@ package com.example.config;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
-
+/**
+ * @author luo
+ * servletconfig文件拦截了全部文件，需要该文件进行放行
+ */
 @Configuration
 public class SpringMvcSupport extends WebMvcConfigurationSupport {
     @Override

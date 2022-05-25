@@ -1,48 +1,50 @@
 package com.example.service.impl;
 
-import com.example.dao.WorkDao;
+import com.example.dao.WorkSelectDao;
 import com.example.domain.*;
-import com.example.service.WorkService;
+import com.example.service.WorkSelectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+/**
+ * @author luo
+ */
 @Service
-public class WorkServiceImpl implements WorkService {
+public class WorkSelectServiceImpl implements WorkSelectService {
 
     @Autowired
-    private WorkDao workDao;
+    private WorkSelectDao workSelectDao;
 
     public List<Employment> selectAllEmploy() {
 
-        return workDao.selectAllEmploy();
+        return workSelectDao.selectAllEmploy();
     }
 
     public List<Department> selectAllDepart() {
 
-        return workDao.selectAllDepart();
+        return workSelectDao.selectAllDepart();
     }
 
     public List<RewardPunish> selectAllReward() {
         //System.out.println(workDao.selectReward());
-        return workDao.selectReward();
+        return workSelectDao.selectReward();
     }
 
     public List<Salary> selectSalary() {
         //System.out.println(workDao.selectSalary());
-        return workDao.selectSalary();
+        return workSelectDao.selectSalary();
     }
 
     public List<Staff> selectStaff() {
-        return workDao.selectStaff();
+        return workSelectDao.selectStaff();
     }
 
     public List<Training> selectTrain() {
-        return workDao.selectTrain();
+        return workSelectDao.selectTrain();
     }
 
     public List<CheckJob> selectCheckJob() {
-        return workDao.selectCheckJob();
+        return workSelectDao.selectCheckJob();
     }
 }

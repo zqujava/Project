@@ -83,10 +83,9 @@
                     console.log(res.data);*/
                     if (res.data) {
                         this.$message.success("用户已存在！");
-                        //window.location.href = '/pages/brand1.html';
                     }else{
                         alert("注册成功，请重新登录！");
-                        window.location.href = '/pages/login.html';
+                        window.location.href = '/pages/login/login.html';
                     }
                 });
             }

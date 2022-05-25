@@ -2,7 +2,10 @@ package com.example.service;
 
 
 import com.example.domain.User;
-
+/**
+ * @author luo
+ * 登录、注册、修改密码
+ */
 public interface UserService {
     /**
      * 登录

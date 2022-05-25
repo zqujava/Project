@@ -5,8 +5,11 @@ import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;
 
 import javax.sql.DataSource;
+/**
+ * @author luo
+ * mybatis扫描dao包和domain包
+ */
 
-//mybatis扫描
 public class MyBatisConfig {
 
     @Bean

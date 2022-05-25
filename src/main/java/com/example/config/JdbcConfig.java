@@ -7,7 +7,9 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
-
+/**
+ * @author luo
+ */
 public class JdbcConfig {
     @Value("${jdbc.driver}")
     private String driver;
