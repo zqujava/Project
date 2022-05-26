@@ -2,10 +2,13 @@ package com.example.service;
 
 
 import com.example.domain.User;
+import org.springframework.transaction.annotation.Transactional;
+
 /**
  * @author luo
  * 登录、注册、修改密码
  */
+@Transactional
 public interface UserService {
     /**
      * 登录

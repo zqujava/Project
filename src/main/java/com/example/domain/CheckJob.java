@@ -7,5 +7,4 @@ public class CheckJob {
     private Integer id;
     private String name;
     private Integer day;
-
 }

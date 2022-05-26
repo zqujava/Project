@@ -2,12 +2,14 @@ package com.example.service;
 
 import com.example.domain.*;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
  * @author luo
  */
+@Transactional
 public interface WorkSelectService {
 
     /**

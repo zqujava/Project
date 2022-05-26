@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/selects")
 @ResponseBody
-public class SelectWorkController {
+public class WorkSelectController {
 
     @Autowired
     private WorkSelectService workSelectService;

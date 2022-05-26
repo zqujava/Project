@@ -1,9 +1,7 @@
 package com.example.service.impl;
 
 import com.example.dao.WorkInsertDao;
-import com.example.domain.RewardPunish;
-import com.example.domain.Staff;
-import com.example.domain.Training;
+import com.example.domain.*;
 import com.example.service.WorkInsertService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,18 +16,32 @@ public class WorkInsertWorkImpl implements WorkInsertService {
     private WorkInsertDao workInsertDao;
 
     public int addStaff(Staff staff) {
-        int i = workInsertDao.addStaff(staff);
-        System.out.println(i);
-        return i;
+        return workInsertDao.addStaff(staff);
     }
 
     public int addTrain(Training training) {
-        System.out.println(workInsertDao.addTrain(training));
         return workInsertDao.addTrain(training);
     }
 
     public int addRewardPunish(RewardPunish rewardPunish) {
-        System.out.println(workInsertDao.addRewardPunish(rewardPunish));
         return workInsertDao.addRewardPunish(rewardPunish);
     }
+
+    public int addEmployment(Employment employment) {
+        return workInsertDao.addEmployment(employment);
+    }
+
+    public int addDepartment(Department department) {
+        return workInsertDao.addDepartment(department);
+    }
+
+    public int addCheckJob(CheckJob checkJob) {
+        return workInsertDao.addCheckJob(checkJob);
+    }
+
+    public int addSalary(Salary salary) {
+        System.out.println(workInsertDao.addSalary(salary));
+        return workInsertDao.addSalary(salary);
+    }
+
 }

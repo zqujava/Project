@@ -8,5 +8,5 @@ public class RewardPunish {
     private String name;
     private Integer category;
     private String content;
-
+    private double wages;
 }

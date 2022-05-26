@@ -6,5 +6,8 @@ import lombok.Data;
 public class Salary {
     private Integer id;
     private String name;
-    private String price;
+    private double wages;
+    private double reward;
+    private double punish;
+    private double sum;
 }

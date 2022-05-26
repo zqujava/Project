@@ -10,5 +10,5 @@ public class Staff {
     private Integer age;
     private String department;
     private String position;
-    private String salary;
+    private double salary;
 }

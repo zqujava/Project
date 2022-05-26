@@ -10,5 +10,5 @@ public class Employment {
     private Integer num;
     private String content;
     private String phone;
-
+    private String year;
 }

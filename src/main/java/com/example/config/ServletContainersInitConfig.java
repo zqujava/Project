@@ -23,7 +23,10 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
         return new String[]{"/"};
     }
 
-    //乱码处理
+    /**
+     * 乱码处理
+     * @return
+     */
     @Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter filter = new CharacterEncodingFilter();
