@@ -40,7 +40,6 @@ public class WorkInsertWorkImpl implements WorkInsertService {
     }
 
     public int addSalary(Salary salary) {
-        System.out.println(workInsertDao.addSalary(salary));
         return workInsertDao.addSalary(salary);
     }
 

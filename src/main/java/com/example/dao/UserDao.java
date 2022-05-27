@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Update;
 
 /**
  * @author luo
+ * login表
  */
 public interface UserDao {
 

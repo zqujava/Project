@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Insert;
 
 /**
  * @author luo
+ * 添加7个表
  */
 public interface WorkInsertDao {
 

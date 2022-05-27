@@ -17,22 +17,18 @@ public class WorkSelectServiceImpl implements WorkSelectService {
     private WorkSelectDao workSelectDao;
 
     public List<Employment> selectAllEmploy() {
-
         return workSelectDao.selectAllEmploy();
     }
 
     public List<Department> selectAllDepart() {
-
         return workSelectDao.selectAllDepart();
     }
 
     public List<RewardPunish> selectAllReward() {
-        //System.out.println(workDao.selectReward());
         return workSelectDao.selectReward();
     }
 
     public List<Salary> selectSalary() {
-        //System.out.println(workDao.selectSalary());
         return workSelectDao.selectSalary();
     }
 
