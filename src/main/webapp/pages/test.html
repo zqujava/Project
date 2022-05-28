@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <template>
+    <TableLayout :permissions="['employment:employment:query']">
+      <!-- 搜索表单 -->
+      <SearchFormCollapse slot="search-form">
+        <el-form ref="searchForm" :model="searchForm" label-width="100px" inline>
+          <el-form-item label="" prop="id">
+            <el-input v-model="searchForm.id" placeholder="请输入" @keypress.enter.native="search"></el-input>
+          </el-form-item>
+          <el-form-item label="" prop="position">
+            <el-input v-model="searchForm.position" placeholder="请输入" @keypress.enter.native="search"></el-input>
+          </el-form-item>
+          <el-form-item label="" prop="salary">
+            <el-input v-model="searchForm.salary" placeholder="请输入" @keypress.enter.native="search"></el-input>
+          </el-form-item>
+          <el-form-item label="" prop="num">
+            <el-input v-model="searchForm.num" placeholder="请输入" @keypress.enter.native="search"></el-input>
+          </el-form-item>
+          <el-form-item label="" prop="content">
+            <el-input v-model="searchForm.content" placeholder="请输入" @keypress.enter.native="search"></el-input>
+          </el-form-item>
+          <el-form-item label="" prop="phone">
+            <el-input v-model="searchForm.phone" placeholder="请输入" @keypress.enter.native="search"></el-input>
+          </el-form-item>
+          <el-form-item label="" prop="year">
+            <el-input v-model="searchForm.year" placeholder="请输入" @keypress.enter.native="search"></el-input>
+          </el-form-item>
+          <section>
+            <el-button type="primary" @click="search">搜索</el-button>
+            <el-button @click="reset">重置</el-button>
+          </section>
+        </el-form>
+      </SearchFormCollapse>
+      <!-- 表格和分页 -->
+      <template v-slot:table-wrap>
+        <ul class="toolbar" v-permissions="['employment:employment:create', 'employment:employment:delete']">
+          <li><el-button type="primary" @click="$refs.operaEmploymentWindow.open('新建')" icon="el-icon-plus" v-permissions="['employment:employment:create']">新建</el-button></li>
+          <li><el-button @click="deleteByIdInBatch" icon="el-icon-delete" v-permissions="['employment:employment:delete']">删除</el-button></li>
+        </ul>
+        <el-table
+                v-loading="isWorking.search"
+                :data="tableData.list"
+                stripe
+                @selection-change="handleSelectionChange"
+        >
+          <el-table-column type="selection" width="55"></el-table-column>
+          <el-table-column prop="id" label="" min-width="100px"></el-table-column>
+          <el-table-column prop="position" label="" min-width="100px"></el-table-column>
+          <el-table-column prop="salary" label="" min-width="100px"></el-table-column>
+          <el-table-column prop="num" label="" min-width="100px"></el-table-column>
+          <el-table-column prop="content" label="" min-width="100px"></el-table-column>
+          <el-table-column prop="phone" label="" min-width="100px"></el-table-column>
+          <el-table-column prop="year" label="" min-width="100px"></el-table-column>
+          <el-table-column
+                  v-if="containPermissions(['employment:employment:update', 'employment:employment:delete'])"
+                  label="操作"
+                  min-width="120"
+                  fixed="right"
+          >
+            <template slot-scope="{row}">
+              <el-button type="text" @click="$refs.operaEmploymentWindow.open('编辑', row)" icon="el-icon-edit" v-permissions="['employment:employment:update']">编辑</el-button>
+              <el-button type="text" @click="deleteById(row)" icon="el-icon-delete" v-permissions="['employment:employment:delete']">删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+        <pagination
+                @size-change="handleSizeChange"
+                @current-change="handlePageChange"
+                :pagination="tableData.pagination"
+        >
+        </pagination>
+      </template>
+      <!-- 新建/修改 -->
+      <OperaEmploymentWindow ref="operaEmploymentWindow" @success="handlePageChange"/>
+    </TableLayout>
+  </template>
+</div>
+<script src="../js/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/axios-0.18.0.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script>
+  import BaseOpera from '@/components/base/BaseOpera'
+  import GlobalWindow from '@/components/common/GlobalWindow'
+  export default {
+    name: 'OperaCheckjobWindow',
+    extends: BaseOpera,
+    components: { GlobalWindow },
+    data () {
+      return {
+        // 表单数据
+        form: {
+          id: null,
+          name: '',
+          day: ''
+        },
+        // 验证规则
+        rules: {
+        }
+      }
+    },
+    created () {
+      this.config({
+        api: '/checkjob',
+        'field.id': 'id'
+      })
+    }
+  }
+</script>
+</body>
+</html>

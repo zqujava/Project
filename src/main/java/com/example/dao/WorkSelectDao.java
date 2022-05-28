@@ -59,4 +59,11 @@ public interface WorkSelectDao {
      */
     @Select("select * from checkjob")
     public List<CheckJob> selectCheckJob();
+
+    /**
+     * 应聘者
+     * @return
+     */
+    @Select("select * from candidate")
+    public List<Candidate> selectCandidate();
 }

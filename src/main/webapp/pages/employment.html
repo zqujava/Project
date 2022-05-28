@@ -5,14 +5,14 @@
     <title>Title</title>
 <!--  <link rel="stylesheet" href="../element-ui/lib/theme-chalk/index.css">-->
   <!-- 引入样式 -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
 
 </head>
 <body>
 <div id="app" >
   <template>
 
-    <el-descriptions class="margin-top" title="应聘岗位" :data="formData" :column="3" border >
+    <el-descriptions class="margin-top" title="应聘岗位" :data="formData" :column="3" border :data="dataList" >
       <template slot="extra">
         <el-button type="primary" size="small">应聘</el-button>
       </template>
@@ -21,35 +21,44 @@
           <i class="el-icon-s-custom"></i>
           岗位
         </template>
-
+        <el-tag size="small" v-html="dataList[0].position">2131</el-tag>
       </el-descriptions-item>
       <el-descriptions-item>
         <template slot="label">
           <i class="el-icon-mobile-phone"></i>
           联系电话
         </template>
-<!--        18100000000-->
+        {{dataList[0].phone}}
       </el-descriptions-item>
       <el-descriptions-item>
         <template slot="label">
           <i class="el-icon-location-outline"></i>
-          居住地
+          薪资
         </template>
-<!--        苏州市-->
+        {{dataList[0].salary}}
       </el-descriptions-item>
       <el-descriptions-item>
         <template slot="label">
-          <i class="el-icon-tickets"></i>
-          备注
+          <i class="el-icon-location-outline"></i>
+          经验
         </template>
-        <el-tag size="small">公司</el-tag>
+        {{dataList[0].year}}
       </el-descriptions-item>
+      <el-descriptions-item>
+
+        <template slot="label">
+          <i class="el-icon-mobile-phone"></i>
+          联系电话
+        </template>
+        {{dataList[0].phone}}
+      </el-descriptions-item>
+      <br/>
       <el-descriptions-item>
         <template slot="label">
           <i class="el-icon-office-building"></i>
-          联系地址
+          工作责任
         </template>
-<!--        江苏省苏州市吴中区吴中大道 1188 号-->
+        {{dataList[0].content}}
       </el-descriptions-item>
     </el-descriptions>
 
@@ -61,7 +70,7 @@
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/axios-0.18.0.js"></script>
-
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 <script>
   var Vue = new Vue({
     el: '#app',
@@ -70,6 +79,7 @@
        dataList: [],//当前页要展示的列表数据
        formData: {},//表单数据
       form: {},//登录数据
+      message:"222"
     },
     //钩子函数，VUE对象初始化完成后自动执行
     created() {
@@ -78,12 +88,13 @@
 
     methods: {
       getAllEmploy(){
-          axios.get("/employs/selectAllEmploy").then((res)=>{
+        var that = this;
+          axios.get("/selects/selectEmploy").then((res)=>{
             console.log(res.data);
             //res.data是服务器返回的内容
             //占时没成功.................数据传不了给data
-            this.data.formData = res.data;
-
+            that.dataList = res.data;
+            //console.log(that.dataList.position);
           });
       },
     },

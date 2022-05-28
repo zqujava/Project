@@ -93,5 +93,15 @@ public class WorkInsertController {
         }
         return i;
     }
-
+    @PostMapping("/addCandidate")
+    public int addCandidate(@RequestBody Candidate candidate){
+        System.out.println(candidate);
+        int i = workInsertService.addCandidate(candidate);
+        if (i > 0) {
+            System.out.println("插入成功");
+        } else {
+            System.out.println("插入失败");
+        }
+        return i;
+    }
 }

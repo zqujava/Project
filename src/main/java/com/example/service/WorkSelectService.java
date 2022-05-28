@@ -54,5 +54,11 @@ public interface WorkSelectService {
      * @return
      */
     public List<CheckJob> selectCheckJob();
+
+    /**
+     * 应聘者
+     * @return
+     */
+    public List<Candidate> selectCandidate();
 }
 

@@ -65,4 +65,12 @@ public interface WorkInsertDao {
    @Insert("insert into salary (name, wages, reward, punish, sum) values (#{name},#{wages},#{reward},#{punish},#{sum})")
    public int addSalary(Salary salary);
 
+   /**
+    * 添加应聘者信息
+    * @param candidate
+    * @return
+    */
+   @Insert("insert into candidate (name, sex, age, phone, degree, experience, site) values (#{name}, #{sex}, #{age}, #{phone}, #{degree}, #{experience}, #{site})")
+   public int addCandidate(Candidate candidate);
+
 }

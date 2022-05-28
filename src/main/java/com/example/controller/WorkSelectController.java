@@ -67,4 +67,10 @@ public class WorkSelectController {
         System.out.println(checkJobs);
         return checkJobs;
     }
+    @GetMapping("/selectCandidate")
+    public List<Candidate> selectCandidate(){
+        List<Candidate> candidates = workSelectService.selectCandidate();
+        System.out.println(candidates);
+        return candidates;
+    }
 }

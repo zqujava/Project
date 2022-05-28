@@ -15,5 +15,5 @@ public interface WorkInsertService {
     public int addDepartment(Department department);
     public int addCheckJob(CheckJob checkJob);
     public int addSalary(Salary salary);
-
+    public int addCandidate(Candidate candidate);
 }

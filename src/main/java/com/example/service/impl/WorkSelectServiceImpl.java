@@ -43,4 +43,8 @@ public class WorkSelectServiceImpl implements WorkSelectService {
     public List<CheckJob> selectCheckJob() {
         return workSelectDao.selectCheckJob();
     }
+
+    public List<Candidate> selectCandidate() {
+        return workSelectDao.selectCandidate();
+    }
 }

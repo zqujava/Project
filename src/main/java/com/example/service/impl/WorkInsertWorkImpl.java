@@ -43,4 +43,8 @@ public class WorkInsertWorkImpl implements WorkInsertService {
         return workInsertDao.addSalary(salary);
     }
 
+    public int addCandidate(Candidate candidate) {
+        return workInsertDao.addCandidate(candidate);
+    }
+
 }
